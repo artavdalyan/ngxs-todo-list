@@ -1,3 +1,2 @@
-export const guid = function guid() {
-    return Math.random().toString(16).slice(2, 6);
-};
+export const guid: () => string = () => Math.random().toString(36).slice(2, 6);
+
