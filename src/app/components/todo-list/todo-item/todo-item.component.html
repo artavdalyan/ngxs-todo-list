@@ -1,3 +1,26 @@
-<p>
-  todo-item works!
-</p>
+<div class="item-block">
+  <mat-checkbox [checked]="item.completed" [disabled]="isEdit" (change)="toggleTodo()"></mat-checkbox>
+  <ng-container *ngIf="!isEdit;else editTodo">
+    <div class="text" [ngClass]="{'selected': item.completed}">{{item.text}}</div>
+    <div class="actions">
+      <div class="edit-item">
+        <mat-icon (click)="editToDo()">edit</mat-icon>
+      </div>
+      <div class="delete-item">
+        <mat-icon (click)="deleteTodo()">delete</mat-icon>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #editTodo>
+    <input type="text" [value]="item.text" #inputTodo>
+    <div class="actions">
+      <div class="edit-item">
+        <mat-icon (click)="updateTodo(inputTodo.value)">save</mat-icon>
+      </div>
+      <div class="delete-item">
+        <mat-icon (click)="cancel()">cancel</mat-icon>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -7,23 +7,22 @@ export class AddToDoItem {
   }
 }
 
-export class RemoveToDoItem {
-  static readonly type = '[ToDo] Remove';
+export class DeleteToDoItem {
+  static readonly type = '[ToDo] Delete';
 
-  constructor(public payload: number) {
+  constructor(public id: string) {
   }
 }
 
-export class EditToDoItem {
-  static readonly type = '[ToDo] Edit';
+export class UpdateToDoItem {
+  static readonly type = '[ToDo] Update';
 
-  constructor(public payload: Todo) {
+  constructor(public id: string, public text: string) {
   }
 }
 
 export class ToggleTodo {
   static readonly type = '[TODO] Toggle';
-
-  constructor(public payload: number) {
+  constructor(public id: string) {
   }
 }

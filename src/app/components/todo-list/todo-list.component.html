@@ -1,3 +1,8 @@
-<p>
-  todo-list works!
-</p>
+<div *ngFor="let item of items$ | async" class="items-block">
+      <todo-item [item] = 'item'> </todo-item>
+</div>
+<div *ngIf = '(items$ | async).length' >
+  Completed  {{(selected$ | async).length}} of  {{(items$ | async).length}}
+</div>
+
+

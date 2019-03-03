@@ -1,0 +1,19 @@
+.todo-block {
+  display: flex;
+  max-width: 400px;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  & > .title h3 {
+     text-align: center;
+     color: #FF9800;
+  }
+}
+.todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > .todo-add {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,6 @@
+.items-block , .items-block + div {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  margin: auto;
+}

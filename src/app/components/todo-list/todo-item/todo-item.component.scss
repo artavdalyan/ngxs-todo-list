@@ -1,0 +1,24 @@
+:host{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+.item-block {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  > div {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+}
+
+.selected {
+  text-decoration: line-through;
+}

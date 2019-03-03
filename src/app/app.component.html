@@ -1,6 +1,17 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Add Item">
-  </mat-form-field>
-</form>
-<mat-checkbox>Check me!</mat-checkbox>
+<div class="todo-block">
+   <div class="title">
+       <h3>Todo App</h3>
+   </div>
+  <form class="todo-form">
+    <mat-form-field class="example-full-width" color='warn'>
+      <input matInput dividerColor="warn" placeholder="Add ToDo"  [(ngModel)] = "todo" name = "todo">
+    </mat-form-field>
+    <div class="todo-add">
+      <button mat-mini-fab color="warn" (click)="addTodo()">+</button>
+    </div>
+  </form>
+</div>
+<todo-list></todo-list>
+
+
+
