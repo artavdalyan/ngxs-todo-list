@@ -12,7 +12,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItemComponent } from './components/todo-list/todo-item/todo-item.component';
-import { TodoState } from '../store/state/todo.state';
+import { TodoState } from './store/state/todo.state';
 
 @NgModule({
   declarations: [

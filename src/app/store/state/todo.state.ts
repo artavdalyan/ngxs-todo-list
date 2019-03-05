@@ -5,7 +5,7 @@ import {
   ToggleTodo,
   DeleteToDoItem, UpdateToDoItem
 } from '../actions/todo.actions';
-import { TodoService } from '../../app/services/todo.service';
+import { TodoService } from '../../services/todo.service';
 
 export interface TodoStateModel {
   todoList: Todo[];

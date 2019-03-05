@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { AddToDoItem } from '../store/actions/todo.actions';
+import { AddToDoItem } from './store/actions/todo.actions';
 import { Observable } from 'rxjs';
-import { guid as GUID } from '../helpers/guid';
-import { Todo } from '../store/models/todo.model';
+import { guid as GUID } from './helpers/guid';
+import { Todo } from './store/models/todo.model';
 
 @Component({
   selector: 'root',

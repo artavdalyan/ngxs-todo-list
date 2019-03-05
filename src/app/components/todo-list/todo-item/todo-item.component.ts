@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { DeleteToDoItem, ToggleTodo, UpdateToDoItem } from '../../../../store/actions/todo.actions';
-import { Todo } from '../../../../store/models/todo.model';
+import { DeleteToDoItem, ToggleTodo, UpdateToDoItem } from '../../../store/actions/todo.actions';
+import { Todo } from '../../../store/models/todo.model';
 
 @Component({
   selector: 'todo-item',

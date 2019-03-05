@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Todo } from '../../../store/models/todo.model';
+import { Todo } from '../../store/models/todo.model';
 import { Select } from '@ngxs/store';
-import { TodoState } from '../../../store/state/todo.state';
+import { TodoState } from '../../store/state/todo.state';
 
 @Component({
   selector: 'todo-list',
