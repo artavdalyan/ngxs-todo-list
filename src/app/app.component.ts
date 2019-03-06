@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { AddToDoItem } from './store/actions/todo.actions';
-import { Observable } from 'rxjs';
 import { guid as GUID } from './helpers/guid';
 import { Todo } from './store/models/todo.model';
+import { TodoService } from './services/todo.service';
 
 @Component({
   selector: 'root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   todo = '';
 
-  constructor(private _store: Store) {
+  constructor(private _store: Store, private todoService: TodoService) {
   }
 
   addTodo() {
