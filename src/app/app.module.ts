@@ -5,7 +5,7 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
 import { FormsModule } from '@angular/forms';
-// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
@@ -15,8 +15,9 @@ import { TodoItemComponent } from './components/todo-list/todo-item/todo-item.co
 import { TodoState } from './store/state/todo.state';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
-import { AuthComponent} from './components/auth/auth.component';
+import { AuthComponent } from './components/auth/auth.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthState } from './store/state/auth.state';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,14 @@ import { AppRoutingModule } from './app-routing.module';
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    // NgxsStoragePluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot({
+      storage: StorageOption.SessionStorage
+    }),
     NgxsLoggerPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsModule.forRoot([
-      TodoState
+      TodoState,
+      AuthState
     ]),
     AppRoutingModule,
   ],

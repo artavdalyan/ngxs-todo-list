@@ -1,27 +1,34 @@
 <div class="form-container shadow">
   <div class="icon">
-    <i class="mdi mdi-account-circle"></i>
-    <div class="header">
-      Sign Up
-    </div>
+    <mat-icon >account_circle</mat-icon>
+    <div class="header"> Register</div>
   </div>
   <div class="inputs">
     <form>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Username">
 
-          <input type="text" placeholder="name">
+      </mat-form-field>
+      <mat-form-field>
 
-      </div>
+        <input  matInput type="password" placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+
+        <input  matInput type="password" placeholder="Number">
+      </mat-form-field>
+
+
+        <mat-form-field>
+        <input  matInput type="password" placeholder="Password">
+      </mat-form-field>
+
     </form>
     <div class="buttons">
-      <span class="signup">
-                <a >Login here</a>
-            </span>
-      <div class="link">
-        <div class="link" style="padding-bottom:0;">
-          <button class="md-raised primary" ui-sref="home"> Signup </button>
-        </div>
-      </div>
+      <button mat-raised-button color="warn">Sign Up</button>
+
     </div>
   </div>
 </div>
+
+
