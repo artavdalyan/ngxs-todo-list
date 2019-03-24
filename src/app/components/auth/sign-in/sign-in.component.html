@@ -1,23 +1,26 @@
-<div class="form-container shadow">
+<div class="form-container shadow" >
   <div class="icon">
-    <mat-icon >account_circle</mat-icon>
+    <mat-icon>account_circle</mat-icon>
     <div class="header"> Login</div>
   </div>
   <div class="inputs">
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="singIn()">
       <mat-form-field>
-        <input matInput type="text" placeholder="username">
-
+        <input matInput type="text" placeholder="username" formControlName="userName" [errorStateMatcher]="errorStateMatcher">
+        <mat-error *ngIf="hasError('userName', 'required')"
+                   [innerText]="'UserName is required'" >
+        </mat-error>
       </mat-form-field>
-      <mat-form-field>
-
-      <input  matInput type="password" placeholder="password">
-        </mat-form-field>
-
+      <mat-form-field >
+        <input   matInput type="password" placeholder="password" formControlName="password"
+                 [errorStateMatcher]="errorStateMatcher">
+        <mat-error  *ngIf="hasError('password', 'required')"
+                   [innerText]="'Password is required'"></mat-error>
+      </mat-form-field>
+      <div class="button">
+        <button  mat-raised-button color="warn" [disabled]="loginForm.invalid">Sign In</button>
+      </div>
     </form>
-    <div class="buttons">
-      <button mat-raised-button color="warn" (click)="singIn()">Sign In</button>
 
-    </div>
   </div>
 </div>

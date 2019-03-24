@@ -12,7 +12,7 @@ export class AuthService {
 
   public signIn (payload): Observable<any>{
 
-    return from([{name: 'artur'}])
+    return from([{...payload}])
 
   }
   public signUp (){

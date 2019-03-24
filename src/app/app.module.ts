@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -34,6 +34,7 @@ import { AuthState } from './store/state/auth.state';
     AppRoutingModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgxsStoragePluginModule.forRoot({
       storage: StorageOption.SessionStorage

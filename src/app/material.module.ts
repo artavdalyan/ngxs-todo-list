@@ -10,7 +10,7 @@ const materialModules = [
   MatInputModule,
   MatButtonModule,
   MatCheckboxModule,
-  MatIconModule
+  MatIconModule,
 ];
 
 @NgModule({
