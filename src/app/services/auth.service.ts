@@ -16,7 +16,7 @@ export class AuthService {
 
   }
   public signUp (){
-
+    return from([{name: 'artur'}])
   }
   public signOut (){
     return from([{name: 'artur'}])

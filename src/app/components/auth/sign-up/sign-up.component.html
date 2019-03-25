@@ -1,34 +1,44 @@
 <div class="form-container shadow">
   <div class="icon">
-    <mat-icon >account_circle</mat-icon>
+    <mat-icon>account_circle</mat-icon>
     <div class="header"> Register</div>
   </div>
   <div class="inputs">
-    <form>
+    <form [formGroup]="regForm" (ngSubmit)="singUp()">
       <mat-form-field>
-        <input matInput type="text" placeholder="Username">
-
-      </mat-form-field>
-      <mat-form-field>
-
-        <input  matInput type="password" placeholder="Email">
+        <input matInput autocomplete="off" type="text" placeholder="Username" formControlName="userName">
+        <mat-error *ngIf="hasError('userName', 'required')"
+                   [innerText]="'UserName is required'">
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-
-        <input  matInput type="password" placeholder="Number">
+        <input matInput type="email" autocomplete="off" placeholder="Email" formControlName="email">
+        <mat-error *ngIf="hasError('email', 'required')"
+                   [innerText]="'Email is required'">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" autocomplete="off" placeholder="Phone Number" formControlName="phone">
+        <mat-error *ngIf="hasError('phone', 'required')"
+                   [innerText]="'Phone Number is required'">
+        </mat-error>
       </mat-form-field>
 
 
-        <mat-form-field>
-        <input  matInput type="password" placeholder="Password">
+      <mat-form-field>
+        <input matInput type="password" autocomplete="off" placeholder="Password" formControlName="password">
+        <mat-error *ngIf="hasError('password', 'required')"
+                   [innerText]="'Password is required'">
+        </mat-error>
       </mat-form-field>
-
+      <div class="button">
+        <button type="submit" mat-raised-button color="warn" [disabled]="regForm.invalid">Sign Up</button>
+      </div>
     </form>
-    <div class="buttons">
-      <button mat-raised-button color="warn">Sign Up</button>
 
-    </div>
   </div>
 </div>
 
-
+<button>
+  <a [routerLink]="['../sign-in']" routerLinkActive="active">SignIn</a>
+</button>
